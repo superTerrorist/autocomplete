@@ -341,7 +341,7 @@
 			if(this.currentValue != value){
 				//如果值发生改变
 				this.currentValue = value;
-				if(value != ""){
+				if(value != "" || ( value == "" && this.options['always'])){
 					//如果值不为空
 					this.source(this.currentValue,function(data){
 						that.response(data);
@@ -475,4 +475,4 @@
 	$.fn.autoComplete = function(options){
 		return new AutoComplete($(this),options);
 	}
-}(window,jQuery)); 
+}(window,jQuery));
